@@ -1,0 +1,12 @@
+[INFO] Backup created: config_backup_20251008015936.txt
+[INFO] Credentials updated
+[INFO] Backup info inserted
+[INFO] Connection status appended
+[INFO] Old DB_NAME entry deleted
+[INFO] Preview of updated config:
+DB_HOST=127.0.0.1
+BACKUP=enabled
+DB_USER=Sasanka
+DB_PASS=Panda1234567
+
+CONNECTION=active
