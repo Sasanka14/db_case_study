@@ -1,96 +1,135 @@
-# 📑 Database Configuration Updater
+# Database Configuration Updater – Automating DB File Management with Shell Scripting
 
-## 🔹 Overview
+## 📌 Overview
+This project is a **Database Configuration Updater** built using **Linux Shell Scripting**.  
+It automates the management of configuration files by:
+- Replacing outdated host, username, and password values  
+- Inserting backup information  
+- Appending connection status  
+- Deleting outdated entries  
+- Previewing modifications  
 
-This project is a shell scripting case study for the **Operating System** course.  
-It automates updates to a database configuration file using **Linux `sed` commands**.  
-The script ensures consistency, prevents manual errors, and maintains reliability.
-
----
-
-## 🔹 Features
-
-* Replace database host, user, and password (`s`)  
-* Insert backup information (`i`)  
-* Append connection status (`a`)  
-* Delete outdated entries (`d`)  
-* Preview modified configuration (`p`)  
+The script also includes **automatic backup creation**, **logging with timestamps**, and **cross-platform compatibility** (Linux & macOS).
 
 ---
 
-## 🔹 Files Included
-
-* `config.txt` → Sample configuration file  
-* `db_config_update.sh` → Shell script for automation  
-* `config_backup_*.txt` → Auto-generated backup files  
-* `update_log.txt` → Execution log with step-by-step updates  
+## 🚀 Features
+- ✅ Automatic backup before every update  
+- ✅ User input for new DB credentials (host, user, password)  
+- ✅ Replace old credentials using `sed`  
+- ✅ Insert backup host information  
+- ✅ Append database connection status  
+- ✅ Delete redundant/obsolete entries  
+- ✅ Preview updated file (first 10 lines)  
+- ✅ Logs all actions into `update_log.txt`  
 
 ---
 
-## 🔹 How to Run
+## 📂 Project Structure
+```
 
-```bash
-# Clone repository
-git clone https://github.com/Sasanka14/db_case_study.git
-cd db_case_study
+db_config_project/
+│── db_config.conf              # Sample configuration file
+│── db_config_update.sh         # Main automation script
+│── update_log.txt              # Log file (created automatically)
+│── db_config_backup_*.conf     # Timestamped backup files
 
-# Give permission
-chmod +x db_config_update.sh
-
-# Run the script
-./db_config_update.sh
 ````
 
 ---
 
-## 🔹 Example
+## ⚙️ Usage
 
-**Before Update (config.txt)**
+### 1. Clone Repository
+```bash
+git clone https://github.com/<your-username>/db-config-updater.git
+cd db-config-updater
+````
 
-```txt
-DB_HOST=localhost
-DB_USER=admin
-DB_PASS=1234
-DB_NAME=testdb
+### 2. Make Script Executable
+
+```bash
+chmod +x db_config_update.sh
 ```
 
-**After Update**
+### 3. Prepare Sample Config
 
-```txt
-DB_HOST=127.0.0.1
-BACKUP=enabled
-DB_USER=Sasanka
-DB_PASS=Panda1234567
-CONNECTION=active
+Edit `db_config.conf` with initial values:
+
+```ini
+host=old_host
+user=old_user
+password=old_pass
+db_name=old_db
+```
+
+### 4. Run Script
+
+```bash
+./db_config_update.sh
+```
+
+### 5. Outputs
+
+* Updated `db_config.conf` with new details
+* Backup file created → `db_config_backup_<timestamp>.conf`
+* Log file → `update_log.txt`
+
+---
+
+## 📝 Example Before vs After
+
+**Before:**
+
+```ini
+host=old_host
+user=old_user
+password=old_pass
+db_name=old_db
+```
+
+**After:**
+
+```ini
+host=192.168.1.2
+backup_host=192.168.1.2
+user=Sasanka
+password=MySecret123
+connection_status=active
 ```
 
 ---
 
-## 🔹 Screenshots  
+## 📊 Analysis Visuals
 
-<table align="center">
-  <tr>
-    <td align="center">
-      <img src="https://github.com/user-attachments/assets/caecfaab-0239-4396-9b18-a84c028834ae" alt="Original Config File" width="250" height="160"/><br/>
-      <b>Original Config</b>
-    </td>
-    <td align="center">
-      <img src="https://github.com/user-attachments/assets/f7927bc6-39fe-41e7-af71-9ff51c9b750a" alt="Script Execution" width="250" height="160"/><br/>
-      <b>Script Execution</b>
-    </td>
-    <td align="center">
-      <img src="https://github.com/user-attachments/assets/e8e66d92-b4e3-4d0a-bce8-4d9e9bad8d77" alt="Updated Config File" width="250" height="160"/><br/>
-      <b>Updated Config</b>
-    </td>
-    <td align="center">
-      <img src="https://github.com/user-attachments/assets/afb9e96e-0098-4f41-aee3-9a0781c1d3ac" alt="Backup and Logs" width="250" height="160"/><br/>
-      <b>Backup & Logs</b>
-    </td>
-  </tr>
-</table>
+* Performance Factors (Pie Chart)
+* Challenges vs Solutions (Bar Chart)
 
+*(Refer to full case study report for charts & detailed analysis.)*
 
+---
 
-## 🔹 Conclusion
+## 🔮 Future Improvements
 
-This project demonstrates how automation through shell scripting can simplify and secure routine system administration tasks. By reducing manual intervention, it improves efficiency, minimizes errors, and ensures reliable database configuration management.
+* Encrypt sensitive credentials
+* Add Git-based version control for config files
+* Multi-database support (MySQL, PostgreSQL, etc.)
+* Integration with DevOps tools like **Ansible** or **Chef**
+* Web-based UI for non-technical administrators
+
+---
+
+## 📚 References
+
+* Silberschatz, A., Galvin, P. B., & Gagne, G. – *Operating System Concepts*
+* Robbins, A. – *Bash Pocket Reference*
+* Shotts, W. E. – *The Linux Command Line: A Complete Introduction*
+* GNU Sed Documentation → [https://www.gnu.org/software/sed/manual](https://www.gnu.org/software/sed/manual)
+* DigitalOcean Tutorials → [https://www.digitalocean.com/community/tutorials](https://www.digitalocean.com/community/tutorials)
+
+---
+
+## 👨‍💻 Author
+
+**Sasanka Sekhar Kundu**
+B.Tech CSE, ITM Skills University
