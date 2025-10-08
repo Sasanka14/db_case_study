@@ -1,6 +1,0 @@
-DB_HOST=127.0.0.1
-BACKUP=enabled
-DB_USER=Sasanka
-DB_PASS=Panda1234567
-
-CONNECTION=active
