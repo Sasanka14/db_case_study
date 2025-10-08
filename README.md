@@ -42,7 +42,7 @@ db_config_project/
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/<your-username>/db-config-updater.git
+git clone https://github.com/Sasanka14/db_case_study.git
 cd db-config-updater
 ````
 
